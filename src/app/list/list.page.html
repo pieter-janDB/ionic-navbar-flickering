@@ -1,27 +1,25 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-button routerLink="/home" routerDirection="backward">
+        <ion-icon name="home" slot="icon-only"></ion-icon>
+      </ion-button>
     </ion-buttons>
-    <ion-title>
-      List
-    </ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button>
+        <ion-icon name="menu" slot="icon-only"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
-    </ion-item>
-  </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+    <h1>PAGE 2</h1>
+    <ion-button routerLink="/home" routerDirection="backward">Navigate with inline routerlink backward</ion-button>
+    <ion-button routerLink="/home" routerDirection="root">Navigate with inline routerlink root</ion-button>
+    <ion-button (click)="navigate()">Navigate with this.router.navigate</ion-button>
+    <ion-button (click)="navigateByUrl()">Navigate with this.router.navigateByUrl</ion-button>
+    <ion-button (click)="navigateForwards()">Navigate with this.navctrl.navigateForwards</ion-button>
+    <ion-button (click)="navigateBackwards()">Navigate with this.navctrl.navigateBackwards</ion-button>
+    <ion-button (click)="navigateroot()">Navigate with this.navctrl.navigateroot</ion-button>
 </ion-content>
